@@ -14,9 +14,18 @@ module.exports = {
       },
       fontSize: {
         s: '0.813rem'
+      },
+      spacing: {
+        '15': '3.75rem',
+        '50': '12.25rem',
+      },
+      padding: {
+        'full': '100%',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio')
+  ],
 }
 
