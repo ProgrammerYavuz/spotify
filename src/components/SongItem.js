@@ -6,7 +6,7 @@ import { setCurrent } from "stores/player"
 function SongItem({ item }) {
 
     const dispatch = useDispatch()
-    const { current } = useSelector(state => state.player)
+    const { current, playing, controls} = useSelector(state => state.player)
 
     const imageStyle = item => {
         switch (item.type) {
@@ -20,8 +20,18 @@ function SongItem({ item }) {
     }
 
     const updateCurrent = () => {
-        dispatch(setCurrent(item))
+        if (current.id === item.id) {
+            if (playing){
+                controls.pause()
+            } else {
+                controls.play()
+            }
+        } else {
+            dispatch(setCurrent(item))
+        }
     }
+
+    const isCurrentItem = (current?.id === item.id && playing)
 
 
     return (
@@ -34,8 +44,8 @@ function SongItem({ item }) {
                 <img src={item.image} className={`absolute object-cover inset-0 w-full h-full ${imageStyle(item)}`} alt=""/>
                 <button 
                     onClick={updateCurrent}
-                    className="group-hover:flex group-focus:flex hidden items-center justify-center absolute bottom-2 right-2 w-10 h-10 rounded-full bg-primary">
-                    <Icon name={current?.id === item.id ? 'pause' : 'play'} size={16}/>
+                    className={`group-hover:flex group-focus:flex ${!isCurrentItem ? 'hidden' : 'flex'} items-center justify-center absolute bottom-2 right-2 w-10 h-10 rounded-full bg-primary`}>
+                    <Icon name={isCurrentItem ? 'pause' : 'play'} size={16}/>
                 </button>
             </div>
             <h6 className="overflow-hidden overflow-ellipsis whitespace-nowrap text-base font-semibold">

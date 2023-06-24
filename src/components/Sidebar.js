@@ -3,8 +3,13 @@ import { Icon } from "Icons"
 import Menu from "./Sidebar/Menu"
 import Playlists from "./Sidebar/Playlists"
 import DownloadApp from "./Sidebar/DownloadApp"
+import SidebarCover from "./Sidebar/SidebarCover"
+import { useSelector } from "react-redux"
 
 function Sidebar() {
+
+    const sidebar = useSelector(state => state.player.sidebar)
+
     return (
         <aside className="w-60 pt-6 flex flex-shrink-0 flex-col bg-black">
 
@@ -38,6 +43,8 @@ function Sidebar() {
             <Playlists />
 
             <DownloadApp />
+
+            {sidebar && <SidebarCover />}
 
         </aside>
     )

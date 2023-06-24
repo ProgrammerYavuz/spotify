@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     current: false,
     controls: false,
-    playing: false
+    playing: false,
+    sidebar: false // calan muzigi sidebar da daha buyuk alanda gosterme
 }
 
 export const playerSlice = createSlice({
@@ -19,13 +20,17 @@ export const playerSlice = createSlice({
     setPlaying: (state, action) => {
         state.playing = action.payload
     },
+    setSidebar: (state, action) => {
+        state.sidebar = action.payload
+    },
   },
 })
 
 export const { 
     setCurrent,
     setControls,
-    setPlaying
+    setPlaying,
+    setSidebar
  } = playerSlice.actions
 
 export default playerSlice.reducer

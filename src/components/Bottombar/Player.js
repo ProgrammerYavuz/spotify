@@ -4,13 +4,13 @@ import { secondsToTime } from "utils";
 import CustomRange from "components/CustomRange";
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setControls } from "stores/player";
+import { setControls, setPlaying, setSidebar } from "stores/player";
 
 
 function Player() {
 
     const dispatch = useDispatch()
-    const { current } = useSelector(state=>state.player)
+    const { current, sidebar } = useSelector(state=>state.player)
 
     const [audio, state, controls] = useAudio({
         src: current?.src
@@ -20,6 +20,10 @@ function Player() {
         dispatch(setControls(controls))
         controls.play()
     }, [current])
+
+    useEffect(() => {
+        dispatch(setPlaying(state.playing))
+    }, [state.playing])
 
     const volumeIcon = useMemo(() => {
 
@@ -43,12 +47,16 @@ function Player() {
                 {current && (
                     <div className="flex items-center">
                         <div className="flex items-center mr-3">
-                            <div className="w-14 h-14 mr-3 flex-shrink-0 relative group">
-                                <img className="rounded-lg" src={current.image} alt="" />
-                                <button className="flex absolute top-1 right-1 items-center justify-center h-6 w-6 bg-black opacity-0 group-hover:opacity-80 hover:!opacity-100 hover:scale-106 rounded-full">
-                                    <Icon name="arrowUp" size={16} />
-                                </button>
-                            </div>
+                            {!sidebar && (
+                                <div className="w-14 h-14 mr-3 flex-shrink-0 relative group">
+                                    <img className="rounded-lg" src={current.image} alt="" />
+                                    <button 
+                                        onClick={() => dispatch(setSidebar(true))}
+                                        className="flex absolute top-1 right-1 items-center justify-center h-6 w-6 bg-black opacity-0 group-hover:opacity-80 hover:!opacity-100 hover:scale-106 rounded-full">
+                                        <Icon name="arrowUp" size={16} />
+                                    </button>
+                                </div>
+                            )}
                             <div>
                                 <h6 className="text-sm line-clamp-1">{current.title}</h6>
                                 <p className="text-xxs">{current.artist}</p>
@@ -63,7 +71,7 @@ function Player() {
                     </div>
                 )}
             </div>
-            <div className="flex max-w-180.5 w-2/5 px-4 flex-col items-center">
+            <div className="flex max-w-180.5 w-2/5 px-4 pt-2 flex-col items-center">
                 <div className="flex items-center gap-x-2">
                     <button className="flex items-center justify-center h-8 w-8 text-white text-opacity-70 hover:text-opacity-100">
                         <Icon name="shuffle" size={16} />
@@ -81,7 +89,7 @@ function Player() {
                         <Icon name="repeat" size={16} />
                     </button>
                 </div>
-                <div className="flex w-full items-center gap-x-2">
+                <div className="flex w-full mt-1.5 items-center gap-x-2">
                     {audio}
                     <div className="text-xxs text-white text-opacity-70">
                         {secondsToTime(state?.time)}
