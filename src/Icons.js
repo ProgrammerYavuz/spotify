@@ -93,8 +93,8 @@ const PauseIcon = ({size}) => {
 const PrevIcon = ({size}) => {
     return (
 
-        <svg viewBox="0 0 24 24" height={size} width={size} xmlns="http://www.w3.org/2000/svg">
-            <polyline points="16 4 7 12 16 20" stroke="currentColor" />
+        <svg viewBox="0 0 16 16" height={size} width={size} xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z" />
         </svg>
     )
 }
@@ -102,8 +102,8 @@ const PrevIcon = ({size}) => {
 const NextIcon = ({size}) => {
     return (
 
-        <svg viewBox="0 0 24 24" height={size} width={size} xmlns="http://www.w3.org/2000/svg">
-            <polyline points="8 4 17 12 8 20" stroke="currentColor" />
+        <svg viewBox="0 0 16 16" height={size} width={size} xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z" />
         </svg>
     )
 }
