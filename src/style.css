@@ -603,6 +603,14 @@ html, body, #root {
   inset: 0px;
 }
 
+.-left-5 {
+  left: -1.25rem;
+}
+
+.-right-5 {
+  right: -1.25rem;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -611,8 +619,20 @@ html, body, #root {
   bottom: 0.5rem;
 }
 
+.bottom-36 {
+  bottom: 9rem;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
 .left-0 {
   left: 0px;
+}
+
+.left-12 {
+  left: 3rem;
 }
 
 .right-0 {
@@ -627,6 +647,10 @@ html, body, #root {
   right: 0.5rem;
 }
 
+.right-6 {
+  right: 1.5rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -639,16 +663,12 @@ html, body, #root {
   top: 50%;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
 .top-full {
   top: 100%;
-}
-
-.-left-5 {
-  left: -1.25rem;
-}
-
-.-right-5 {
-  right: -1.25rem;
 }
 
 .z-10 {
@@ -660,12 +680,24 @@ html, body, #root {
   margin-right: 1.5rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-1\.5 {
+  margin-bottom: 0.375rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
 
 .mb-7 {
   margin-bottom: 1.75rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .ml-4 {
@@ -702,10 +734,6 @@ html, body, #root {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
 }
 
 .line-clamp-1 {
@@ -748,6 +776,10 @@ html, body, #root {
 
 .h-15 {
   height: 3.75rem;
+}
+
+.h-16 {
+  height: 4rem;
 }
 
 .h-24 {
@@ -802,12 +834,20 @@ html, body, #root {
   width: 3.5rem;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
 .w-2\/5 {
   width: 40%;
 }
 
 .w-23 {
   width: 5.75rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .w-25 {
@@ -898,16 +938,16 @@ html, body, #root {
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -935,9 +975,19 @@ html, body, #root {
           column-gap: 0.5rem;
 }
 
+.gap-x-3 {
+  -webkit-column-gap: 0.75rem;
+          column-gap: 0.75rem;
+}
+
 .gap-x-4 {
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
+}
+
+.gap-x-5 {
+  -webkit-column-gap: 1.25rem;
+          column-gap: 1.25rem;
 }
 
 .gap-x-6 {
@@ -947,6 +997,10 @@ html, body, #root {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 .self-center {
@@ -1073,6 +1127,14 @@ html, body, #root {
   --tw-gradient-to: #93c5fd var(--tw-gradient-to-position);
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
 .object-cover {
   object-fit: cover;
 }
@@ -1172,6 +1234,10 @@ html, body, #root {
   font-size: 0.688rem;
 }
 
+.font-medium {
+  font-weight: 500;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -1223,8 +1289,16 @@ html, body, #root {
   opacity: 0;
 }
 
+.opacity-50 {
+  opacity: 0.5;
+}
+
 .opacity-70 {
   opacity: 0.7;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .shadow-spotify {
@@ -1236,6 +1310,17 @@ html, body, #root {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.blur-md {
+  --tw-blur: blur(12px);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .duration-500 {
@@ -1302,13 +1387,27 @@ html, body, #root {
 }
 
 @media (min-width: 768px) {
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:grid-cols-5 {
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }

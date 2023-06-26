@@ -24,31 +24,31 @@ function Auth() {
                         <Menu.Item>
                             {({ active }) => (
                                 <a
-                                className={`flex h-10 items-center justify-between px-2 text-sm font-semibold rounded ${active && 'bg-white bg-opacity-10'}`}
-                                href="/"
+                                    className={`flex h-10 items-center justify-between px-2 text-sm font-semibold rounded ${active && 'bg-white bg-opacity-10'}`}
+                                    href="/"
                                 >
-                                Account
-                                <Icon name="external" size={16} />
+                                    Hesap
+                                    <Icon name="external" size={16} />
                                 </a>
                             )}
                         </Menu.Item>
                         <Menu.Item>
                             {({ active }) => (
                                 <a
-                                className={`flex h-10 items-center px-2 text-sm font-semibold rounded ${active && 'bg-white bg-opacity-10'}`}
-                                href="/"
+                                    className={`flex h-10 items-center px-2 text-sm font-semibold rounded ${active && 'bg-white bg-opacity-10'}`}
+                                    href="/"
                                 >
-                                Profile
+                                    Profil
                                 </a>
                             )}
                         </Menu.Item>
                         <Menu.Item>
                             {({ active }) => (
                                 <a
-                                className={`flex h-10 items-center px-2 text-sm font-semibold rounded ${active && 'bg-white bg-opacity-10'}`}
-                                href="/"
+                                    className={`flex h-10 items-center px-2 text-sm font-semibold rounded ${active && 'bg-white bg-opacity-10'}`}
+                                    href="/"
                                 >
-                                Log Out
+                                    Çıkış Yap
                                 </a>
                             )}
                         </Menu.Item>
